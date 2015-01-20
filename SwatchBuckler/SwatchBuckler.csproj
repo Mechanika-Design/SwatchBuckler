@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C35429AB-32F5-4066-BFE8-18054CE8506F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SwatchBuckler</RootNamespace>
+    <AssemblyName>SwatchBuckler</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>mechanikapublic.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ColorCollection.cs" />
+    <Compile Include="ColorCollectionEventArgs.cs" />
+    <Compile Include="ColorCollectionSortOrder.cs" />
+    <Compile Include="ColorComparer.cs" />
+    <Compile Include="ColorGrid\ColorCellBorderStyle.cs" />
+    <Compile Include="ColorGrid\ColorEditingMode.cs" />
+    <Compile Include="ColorGrid\ColorGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ColorGrid\ColorGridSelectedCellStyle.cs" />
+    <Compile Include="ColorGrid\ColorHitTestInfo.cs" />
+    <Compile Include="ColorGrid\ColorPalette.cs" />
+    <Compile Include="ColorGrid\ColorPalettes.cs" />
+    <Compile Include="ColorGrid\ColorSource.cs" />
+    <Compile Include="ColorGrid\EditColorCancelEventArgs.cs" />
+    <Compile Include="ColorGrid\EditColorEventArgs.cs" />
+    <Compile Include="ColorGrid\IColorEditor.cs" />
+    <Compile Include="ColorGrid\NavigationOrigin.cs" />
+    <Compile Include="Formats\GimpPalette.cs" />
+    <Compile Include="Formats\PhotoshopColorSwatch.cs" />
+    <Compile Include="Formats\PhotoShopColorSwatchFileVersion.cs" />
+    <Compile Include="Formats\PhotoShopPalette.cs" />
+    <Compile Include="IPalette.cs" />
+    <Compile Include="Formats\JascPalette.cs" />
+    <Compile Include="Formats\PaintNetPalette.cs" />
+    <Compile Include="Palette.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Formats\RawPalette.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Support\CIELabColor.cs" />
+    <Compile Include="Support\CIEXYZColor.cs" />
+    <Compile Include="Support\CmykColor.cs" />
+    <Compile Include="Support\HslColor.cs" />
+    <Compile Include="Support\OctreeQuantizer.cs" />
+    <Compile Include="Support\Quantizer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="mechanikapublic.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\cellbackground.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
